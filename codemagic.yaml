@@ -1,0 +1,30 @@
+workflows:
+  build-android:
+    name: Build Android
+    environment:
+      groups:
+        - keystore
+        - all
+      flutter: 3.22.0
+      java: 17
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "main"
+          include: true
+          source: true
+      cancel_previous_builds: true
+    scripts:
+      - name: Analyze
+        script: flutter analyze
+      # - name: Run test
+      #   script: flutter test test/
+      - name: Build
+        script: |
+          echo "simple id card signing keystore"
+          echo $APP_KEYSTORE_BASE64 | base64 --decode > $APP_KEYSTORE_FILE
+
+          echo "Building app"
+          flutter build apk --release --dart-define="API_URL=https://ktb.otesuto.com/api"
+      
