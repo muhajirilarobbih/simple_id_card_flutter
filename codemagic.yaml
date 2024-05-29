@@ -26,5 +26,5 @@ workflows:
           echo $APP_KEYSTORE_BASE64 | base64 --decode > $APP_KEYSTORE_FILE
 
           echo "Building app"
-          flutter build apk --release --dart-define="API_URL=https://ktb.otesuto.com/api"
+          flutter build apk --release"
       
