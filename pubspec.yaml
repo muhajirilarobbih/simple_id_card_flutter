@@ -1,6 +1,7 @@
 name: simple_id_card
 description: Simple ID Card By Muhajir
 version: 0.0.1
+repository: https://github.com/muhajirilarobbih/simple_id_card_flutter
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
