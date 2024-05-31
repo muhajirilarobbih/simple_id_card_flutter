@@ -28,4 +28,5 @@ workflows:
           export PATH='$PATH:/home/.pub-cache/bin' -- this is probably not correct"
           dart pub global activate onepub"
           export ONEPUB_TOKEN="MzMxODo5MmRhYzg1NS0zZjNlLTQ3OWQtYmVkNC1iZjBmNzhlODI4OWY=";onepub import"
+          dart pub publish --force"
       
