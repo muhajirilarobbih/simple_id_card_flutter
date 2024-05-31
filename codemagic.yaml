@@ -22,9 +22,10 @@ workflows:
       #   script: flutter test test/
       - name: Build
         script: |
-          echo "simple id card signing keystore"
-          echo $APP_KEYSTORE_BASE64 | base64 --decode > $APP_KEYSTORE_FILE
-
-          echo "Building app"
-          flutter build apk --release"
+          echo "Publish onePubdev"
+          onepub login"
+          onepub export --user muhajirilarobbih@gmail.com"
+          export PATH='$PATH:/home/.pub-cache/bin' -- this is probably not correct"
+          dart pub global activate onepub"
+          export ONEPUB_TOKEN="MzMxODo5MmRhYzg1NS0zZjNlLTQ3OWQtYmVkNC1iZjBmNzhlODI4OWY=";onepub import"
       
